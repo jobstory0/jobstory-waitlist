@@ -1,7 +1,12 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { useRouter } from "next/navigation";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
+import logo from "../assets/logo.png";
+import Benefits from "@/components/Benefits";
+import Comparison from "@/components/Comparison";
 
 /**
  * FAQ Item Component
@@ -64,6 +69,7 @@ function AnimatedSection({ children, className, id }: { children: React.ReactNod
 
 export default function Home() {
   const [isClient, setIsClient] = useState(false);
+  const router = useRouter();
 
   useEffect(() => {
     setIsClient(true);
@@ -78,17 +84,26 @@ export default function Home() {
 
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 relative z-10">
         {/* Hero Section */}
-        <section className="flex flex-col items-center text-center gap-16">
+        <section className="flex flex-col items-center text-center gap-8">
           {/* Logo + badge */}
-          <div className="flex flex-col items-center gap-8">
-            {/* Logo with shadow */}
-            <div className="w-[55px] h-[55px] rounded-full overflow-hidden bg-primary flex items-center justify-center shadow-lg">
-              <span className="text-white font-dm-sans font-bold text-2xl">J</span>
-            </div>
+          <div className="flex flex-col items-center gap-4">
+            <AnimatedSection id="logo" className="mb-0 cursor-pointer group">
+              <div className="relative">
+                {/* Subtle glow effect on hover */}
+                <div className="absolute inset-0 bg-primary/20 blur-3xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <Image
+                  src={logo}
+                  alt="Logo"
+                  width={140}
+                  height={140}
+                  className="w-36 h-36 object-contain relative z-10 transition-all duration-500 group-hover:scale-105 group-hover:rotate-2 drop-shadow-sm group-hover:drop-shadow-md"
+                />
+              </div>
+            </AnimatedSection>
 
             {/* Beta badge */}
             <AnimatedSection id="badge">
-              <div className="bg-[#f5f5f5] rounded-full px-3 py-1 flex items-center gap-2">
+              <div className="bg-[#f5f5f5] rounded-full px-3 flex items-center gap-2">
                 {/* Pulse indicator */}
                 <div className="relative w-3 h-3">
                   <div className="absolute inset-0 rounded-full bg-primary animate-pulse-slow opacity-30" />
@@ -120,7 +135,7 @@ export default function Home() {
                 className="w-full"
                 onSubmit={(e) => {
                   e.preventDefault();
-                  alert("Thanks for joining! You'll hear from us soon.");
+                  router.push("/thanks");
                 }}
               >
                 <div className="flex flex-col sm:flex-row gap-2 w-full">
@@ -165,7 +180,7 @@ export default function Home() {
           </div>
 
           {/* Feature cards */}
-          <AnimatedSection id="features" className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-4xl mt-8">
+          <AnimatedSection id="features" className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-4xl mt-4">
             {/* Card 1 */}
             <div className="relative bg-card rounded-2xl p-8 text-center border border-border/50">
               <div className="absolute -top-5 left-1/2 -translate-x-1/2 w-10 h-10 bg-primary rounded-full flex items-center justify-center shadow-lg">
@@ -210,7 +225,7 @@ export default function Home() {
         </section>
 
         {/* Mission Section */}
-        <AnimatedSection id="mission" className="mt-32">
+        <AnimatedSection id="mission" className="mt-20">
           <div className="max-w-3xl mx-auto bg-[#fcfcfc] rounded-2xl p-2 border border-[#f0f0f0] shadow-sm">
             <div className="bg-[#f9f9f9] rounded-xl p-8 md:p-12 relative overflow-hidden">
               <div className="inline-block bg-muted rounded-full px-3 py-1 text-sm font-medium text-primary mb-6">Mission</div>
@@ -265,8 +280,14 @@ export default function Home() {
         </AnimatedSection>
 
 
+        {/* Benefits Content */}
+        <Benefits />
+
+        {/* Comparison Table */}
+        <Comparison />
+
         {/* FAQ Section */}
-        <AnimatedSection id="faq" className="mt-32">
+        <AnimatedSection id="faq" className="mt-20">
           <div className="max-w-3xl mx-auto text-center">
             <div className="inline-block bg-muted rounded-full px-3 py-1 text-sm font-medium text-primary mb-4">FAQ</div>
             <h2 className="font-dm-sans font-semibold text-3xl md:text-4xl lg:text-5xl tracking-[-0.06em] leading-tight mb-12">
@@ -308,13 +329,13 @@ export default function Home() {
 
             <p className="text-[#545454] text-sm mt-8">
               Contact us:{" "}
-              <a href="mailto:hello@jobstory.ai" className="text-primary underline hover:text-secondary transition-colors">
+              <a href="mailto:contact@jobstory.online" className="text-primary underline hover:text-secondary transition-colors">
                 contact@jobstory.online
               </a>
             </p>
           </div>
         </AnimatedSection>
       </main>
-    </div>
+    </div >
   );
 }
