@@ -25,6 +25,8 @@ export const metadata: Metadata = {
   description: "Create ATS-friendly resumes and professional portfolios in a single click.",
 };
 
+import { ConvexClientProvider } from "@/components/ConvexClientProvider";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -38,7 +40,9 @@ export default function RootLayout({
       "antialiased"
     )}>
       <body className="bg-background selection:bg-primary/20 selection:text-primary">
-        {children}
+        <ConvexClientProvider>
+          {children}
+        </ConvexClientProvider>
       </body>
     </html>
   );

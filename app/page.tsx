@@ -7,6 +7,9 @@ import Image from "next/image";
 import logo from "../assets/logo.png";
 import Benefits from "@/components/Benefits";
 import Comparison from "@/components/Comparison";
+import { useMutation, useQuery } from "convex/react";
+import { api } from "@/convex/_generated/api";
+import { Spinner } from "@/components/ui/spinner";
 
 /**
  * FAQ Item Component
@@ -69,11 +72,32 @@ function AnimatedSection({ children, className, id }: { children: React.ReactNod
 
 export default function Home() {
   const [isClient, setIsClient] = useState(false);
+  const [email, setEmail] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
+  const joinWaitlist = useMutation(api.waitlist.joinWaitlist);
+  const waitlistCount = useQuery(api.waitlist.getCount);
 
   useEffect(() => {
     setIsClient(true);
   }, []);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email) return;
+
+    setIsLoading(true);
+    try {
+      await joinWaitlist({ email });
+      router.push("/thanks");
+    } catch (error) {
+      console.error("Failed to join waitlist:", error);
+      // Fallback redirect even if mutation fails, or you could show an error toast
+      router.push("/thanks");
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
   if (!isClient) return null;
 
@@ -133,25 +157,34 @@ export default function Home() {
             <AnimatedSection id="signup" className="w-full max-w-md">
               <form
                 className="w-full"
-                onSubmit={(e) => {
-                  e.preventDefault();
-                  router.push("/thanks");
-                }}
+                onSubmit={handleSubmit}
               >
                 <div className="flex flex-col sm:flex-row gap-2 w-full">
                   <input
                     type="email"
                     placeholder="Your Email"
                     required
-                    className="flex-1 px-5 py-3 rounded-full border border-border bg-background text-foreground placeholder-muted-foreground focus:outline-none focus:border-primary transition shadow-sm"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    disabled={isLoading}
+                    className="flex-1 px-5 py-3 rounded-full border border-border bg-background text-foreground placeholder-muted-foreground focus:outline-none focus:border-primary transition shadow-sm disabled:opacity-50"
                   />
                   <button
                     type="submit"
-                    className="btn-hover group relative px-6 py-3 bg-primary text-primary-foreground font-semibold rounded-full shadow-lg overflow-hidden"
+                    disabled={isLoading}
+                    className="btn-hover group relative px-6 py-3 bg-primary text-primary-foreground font-semibold rounded-full shadow-lg overflow-hidden disabled:opacity-80"
                   >
                     <span className="btn-text-container block h-6 overflow-hidden">
-                      <span className="btn-text block">Join Waitlist</span>
-                      <span className="btn-text block">Join Waitlist</span>
+                      {isLoading ? (
+                        <span className="flex items-center justify-center h-full">
+                          <Spinner className="text-primary-foreground size-5" />
+                        </span>
+                      ) : (
+                        <>
+                          <span className="btn-text block">Join Waitlist</span>
+                          <span className="btn-text block">Join Waitlist</span>
+                        </>
+                      )}
                     </span>
                   </button>
                 </div>
@@ -160,21 +193,29 @@ export default function Home() {
 
             {/* Social proof with avatars */}
             <AnimatedSection id="social" className="flex flex-col sm:flex-row items-center gap-4 mt-4">
-              <div className="flex -space-x-3">
-                {[
-                  "https://framerusercontent.com/images/HLatOHY2th72tQd2Q8SAtIND7k.png?width=904&height=1200",
-                  "https://framerusercontent.com/images/psWN8QXt1XZf9ZPCJS15s3vjvI.png?scale-down-to=512&width=1200&height=1200",
-                  "https://framerusercontent.com/images/f4Td5598zP1kJwu77x7p8JntQM.png?scale-down-to=512&width=1200&height=1200",
-                ].map((src, i) => (
-                  <div key={i} className="w-7 h-7 rounded-full border-2 border-white overflow-hidden shadow-lg">
-                    <img src={src} alt="" className="w-full h-full object-cover" />
-                  </div>
-                ))}
-              </div>
+              {waitlistCount !== undefined && waitlistCount > 0 && (
+                <div className="flex -space-x-3">
+                  {[
+                    "https://framerusercontent.com/images/HLatOHY2th72tQd2Q8SAtIND7k.png?width=904&height=1200",
+                    "https://framerusercontent.com/images/psWN8QXt1XZf9ZPCJS15s3vjvI.png?scale-down-to=512&width=1200&height=1200",
+                    "https://framerusercontent.com/images/f4Td5598zP1kJwu77x7p8JntQM.png?scale-down-to=512&width=1200&height=1200",
+                  ].map((src, i) => (
+                    <div key={i} className="w-7 h-7 rounded-full border-2 border-white overflow-hidden shadow-lg">
+                      <img src={src} alt="" className="w-full h-full object-cover" />
+                    </div>
+                  ))}
+                </div>
+              )}
               <div className="flex items-center gap-1 text-foreground">
-                <span className="font-medium">Join</span>
-                <span className="font-bold text-primary">12,450+</span>
-                <span>job seekers & career switchers</span>
+                {waitlistCount !== undefined && waitlistCount >= 10 ? (
+                  <>
+                    <span className="font-medium">Join</span>
+                    <span className="font-bold text-primary">{waitlistCount.toLocaleString()}+</span>
+                    <span>job seekers & career switchers</span>
+                  </>
+                ) : (
+                  <span className="font-medium text-[#545454]">Become part of our community to shape-up your career</span>
+                )}
               </div>
             </AnimatedSection>
           </div>
