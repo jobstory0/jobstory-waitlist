@@ -299,22 +299,15 @@ export default function Home() {
               <div className="flex items-center gap-3 mt-8">
                 <div className="w-10 h-10 rounded-full overflow-hidden">
                   <img
-                    src="https://framerusercontent.com/images/E9vSC7du9BpDnt39YsVpht27oY.png?width=1200&height=1200"
-                    alt="Daniel Hayes"
+                    src="https://pbs.twimg.com/profile_images/2018636868590698497/xMyRP90q_400x400.jpg"
+                    alt="Yachika Goyal"
                     className="w-full h-full object-cover"
                   />
                 </div>
                 <div>
-                  <p className="font-medium text-primary">JobStory Team</p>
-                  <p className="text-xs text-[#545454]">AI Career Platform</p>
+                  <p className="font-medium text-primary">Yachika Goyal</p>
+                  <p className="text-xs text-[#545454]">Co-Founder @JobStory</p>
                 </div>
-              </div>
-
-              {/* Floating icon */}
-              <div className="absolute -top-5 right-8 w-12 h-12 bg-primary rounded-full flex items-center justify-center shadow-lg">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M12 4V20M4 12H20" stroke="white" strokeWidth="2" strokeLinecap="round" />
-                </svg>
               </div>
             </div>
           </div>

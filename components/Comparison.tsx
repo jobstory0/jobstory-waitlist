@@ -20,9 +20,6 @@ export default function Comparison() {
                         <p className="text-lg text-slate-500 mt-6 mb-8 leading-relaxed">
                             {COMPARISON_CONTENT.description}
                         </p>
-                        <button className="px-8 py-4 rounded-full text-base font-medium transition-colors shadow-md flex items-center gap-2 bg-slate-900 text-white hover:bg-slate-800">
-                            {COMPARISON_CONTENT.cta} <ArrowRight strokeWidth={1.5} className="w-5 h-5" />
-                        </button>
                     </div>
 
                     <div className="w-full lg:w-2/3 overflow-x-auto rounded-3xl border shadow-sm border-slate-200">

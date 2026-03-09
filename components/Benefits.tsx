@@ -81,9 +81,6 @@ export default function Benefits() {
                                 </div>
                                 <h3 className="text-2xl font-medium tracking-tight mb-4 text-slate-900">{BENEFITS_PREMIUM.premium_title}</h3>
                                 <p className="text-base mb-8 flex-grow text-slate-600">{BENEFITS_PREMIUM.premium_description}</p>
-                                <button className="w-full py-4 rounded-xl text-base font-medium transition-colors shadow-md bg-slate-900 text-white hover:bg-slate-800">
-                                    {BENEFITS_PREMIUM.premium_cta} <Sparkles className="w-4 h-4 inline ml-2" />
-                                </button>
                             </div>
                         </div>
                     </div>
