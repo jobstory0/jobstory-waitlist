@@ -275,7 +275,7 @@ export default function Home() {
                 The New Era of AI-Powered Career Growth
               </h2>
               <p className="text-[#545454] text-lg mb-2">
-                JobStory aims to become a complete career profile platform where you can build professional resumes, generate personal portfolios, and improve your profile using AI.
+                crediblitz aims to become a complete career profile platform where you can build professional resumes, generate personal portfolios, and improve your profile using AI.
               </p>
               <p className="text-[#545454] text-lg mb-6">
                 Our goal is to make career storytelling simple. Launch your professional identity in minutes, not hours.
@@ -306,7 +306,7 @@ export default function Home() {
                 </div>
                 <div>
                   <p className="font-medium text-primary">Yachika Goyal</p>
-                  <p className="text-xs text-[#545454]">Co-Founder @JobStory</p>
+                  <p className="text-xs text-[#545454]">Co-Founder @crediblitz</p>
                 </div>
               </div>
             </div>
@@ -356,15 +356,15 @@ export default function Home() {
                 />
                 <FaqItem
                   question="Do I need technical skills?"
-                  answer="No. JobStory is designed for everyone. If you can fill out a form, you can build a portfolio."
+                  answer="No. crediblitz is designed for everyone. If you can fill out a form, you can build a portfolio."
                 />
               </div>
             </div>
 
             <p className="text-[#545454] text-sm mt-8">
               Contact us:{" "}
-              <a href="mailto:contact@jobstory.online" className="text-primary underline hover:text-secondary transition-colors">
-                contact@jobstory.online
+              <a href="mailto:contact@crediblitz.online" className="text-primary underline hover:text-secondary transition-colors">
+                contact@crediblitz.online
               </a>
             </p>
           </div>

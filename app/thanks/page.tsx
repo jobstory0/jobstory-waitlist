@@ -96,7 +96,7 @@ export default function ThanksPage() {
 
                         {/* Instagram */}
                         <a
-                            href="https://www.instagram.com/jobstory0/"
+                            href="https://www.instagram.com/crediblitz0/"
                             target="_blank"
                             rel="noopener"
                             className="social-icon w-12 h-12 bg-[#1c1c1c] rounded-lg flex items-center justify-center shadow-lg transition-transform hover:scale-110 active:scale-95 group"
@@ -122,7 +122,7 @@ export default function ThanksPage() {
 
                         {/* X (Twitter) */}
                         <a
-                            href="https://x.com/Jobstory141664"
+                            href="https://x.com/crediblitz141664"
                             target="_blank"
                             rel="noopener"
                             className="social-icon w-12 h-12 bg-[#1c1c1c] rounded-lg flex items-center justify-center shadow-lg transition-transform hover:scale-110 active:scale-95 group"

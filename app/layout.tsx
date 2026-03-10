@@ -21,7 +21,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "JobStory — AI Resume & Portfolio Generator",
+  title: "crediblitz — AI Resume & Portfolio Generator",
   description: "Create ATS-friendly resumes and professional portfolios in a single click.",
   icons: {
     icon: "/icon.png",

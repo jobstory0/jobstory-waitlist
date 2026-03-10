@@ -10,7 +10,7 @@ export default function Benefits() {
                     <h2 className="text-3xl md:text-5xl font-semibold tracking-tight mt-6 leading-tight text-slate-900 font-display">
                         Built to Get You <span className="inline-flex items-center gap-1 text-[#1F8A77]"><Award strokeWidth={2} className="w-8 h-8 fill-[#1F8A77]/20" /> Hired</span>
                     </h2>
-                    <p className="text-lg text-slate-500 mt-6 max-w-2xl text-center">Solve the most common career hurdles with JobStory's automated tools.</p>
+                    <p className="text-lg text-slate-500 mt-6 max-w-2xl text-center">Solve the most common career hurdles with crediblitz's automated tools.</p>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

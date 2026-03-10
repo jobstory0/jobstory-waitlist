@@ -73,9 +73,9 @@ export const BENEFITS = [
 ];
 
 export const COMPARISON_FEATURES = [
-    { name: "Free ATS Templates", common: true, jobstory: true },
-    { name: "One-Click Portfolio Site", common: false, jobstory: true },
-    { name: "AI Resume Generation", common: false, jobstory: true },
+    { name: "Free ATS Templates", common: true, crediblitz: true },
+    { name: "One-Click Portfolio Site", common: false, crediblitz: true },
+    { name: "AI Resume Generation", common: false, crediblitz: true },
 ];
 
 export const PRICING_PLAN = {
@@ -91,7 +91,7 @@ export const PRICING_PLAN = {
     ],
     testimonial: {
         quote: "Got my dream job in 2 weeks!",
-        content: "JobStory made building my portfolio so easy. I just linked my GitHub and it generated a professional site immediately. The ATS-friendly resume templates actually work!",
+        content: "crediblitz made building my portfolio so easy. I just linked my GitHub and it generated a professional site immediately. The ATS-friendly resume templates actually work!",
         author: "Sarah J.",
         role: "Frontend Developer",
         avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=100&q=80"
@@ -100,12 +100,12 @@ export const PRICING_PLAN = {
 
 export const FAQS = [
     {
-        question: "Is JobStory really free?",
-        answer: "Yes! JobStory offers a generous Free Tier that includes 5 Resume Templates, 2 Portfolio Templates, and unlimited resume/portfolio generation. You can export your resume as a PDF and deploy your portfolio to GitHub Pages without any cost."
+        question: "Is crediblitz really free?",
+        answer: "Yes! crediblitz offers a generous Free Tier that includes 5 Resume Templates, 2 Portfolio Templates, and unlimited resume/portfolio generation. You can export your resume as a PDF and deploy your portfolio to GitHub Pages without any cost."
     },
     {
         question: "How do I deploy my portfolio?",
-        answer: "Deployment is fully automated. After you input your data, JobStory creates a GitHub repository for you, pushes the code, and enables GitHub Pages. Your professional site is live in seconds at a URL like 'username.github.io/jobstory-portfolio'."
+        answer: "Deployment is fully automated. After you input your data, crediblitz creates a GitHub repository for you, pushes the code, and enables GitHub Pages. Your professional site is live in seconds at a URL like 'username.github.io/crediblitz-portfolio'."
     },
     {
         question: "Are templates ATS-friendly?",
@@ -120,8 +120,8 @@ export const FAQS = [
         answer: "Yes. You can manage and customize sections like About, Work Experience, Projects, Skills, and Contact Information. You have full control over the content, layouts, and professional themes used for your site."
     },
     {
-        question: "What makes JobStory different from others?",
-        answer: "Unlike traditional builders that lock templates and PDF exports behind paywalls, JobStory provides high-quality ATS tools for free. We also bridge the gap by generating a matching portfolio website automatically alongside your resume."
+        question: "What makes crediblitz different from others?",
+        answer: "Unlike traditional builders that lock templates and PDF exports behind paywalls, crediblitz provides high-quality ATS tools for free. We also bridge the gap by generating a matching portfolio website automatically alongside your resume."
     },
 ];
 
@@ -150,18 +150,18 @@ export const PRICING_CONTENT = {
 };
 
 export const GLOBAL_GROWTH_CONTENT = {
-    title: "Grow Beyond Borders With JobStory",
-    description: "Whether you're applying for a remote role or showcasing your work to international recruiters, JobStory makes it simple, fast, and professional.",
+    title: "Grow Beyond Borders With crediblitz",
+    description: "Whether you're applying for a remote role or showcasing your work to international recruiters, crediblitz makes it simple, fast, and professional.",
     cta: "Explore Global Templates"
 };
 
 export const COMPARISON_CONTENT = {
-    badge: "JobStory vs Others",
+    badge: "crediblitz vs Others",
     title: "The Smarter Way to Build Your Career",
-    description: "Traditional resume builders lock templates behind paywalls and charge for basic PDF downloads. JobStory gives you high-quality, ATS-friendly tools for free, with optional AI superpowers for serious job seekers.",
+    description: "Traditional resume builders lock templates behind paywalls and charge for basic PDF downloads. crediblitz gives you high-quality, ATS-friendly tools for free, with optional AI superpowers for serious job seekers.",
     cta: "Start Building",
     others_label: "Common Builders",
-    jobstory_label: "JobStory"
+    crediblitz_label: "crediblitz"
 };
 
 export const NAVBAR_CTA = "Get Started";
@@ -169,11 +169,11 @@ export const NAVBAR_CTA = "Get Started";
 export const FOOTER_CTA = {
     badge: "Build For Your Next Opportunity",
     title_part1: "Unlock Your Career",
-    title_part2: "with JobStory",
+    title_part2: "with crediblitz",
     title_part3: "Templates",
-    description: "JobStory is the ultimate platform for creating ATS-friendly resumes and stunning portfolio websites in seconds. Start building your professional identity today.",
+    description: "crediblitz is the ultimate platform for creating ATS-friendly resumes and stunning portfolio websites in seconds. Start building your professional identity today.",
     cta: "Get Started for Free",
-    bg_text: "jobstory"
+    bg_text: "crediblitz"
 };
 
 export const WORKFLOW_CONTENT = {

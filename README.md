@@ -1,10 +1,10 @@
-# JobStory — AI Resume & Portfolio Generator
+# crediblitz — AI Resume & Portfolio Generator
 
-JobStory is an AI-powered platform that helps job seekers create **ATS-friendly resumes** and **professional portfolios** with minimal effort.
+crediblitz is an AI-powered platform that helps job seekers create **ATS-friendly resumes** and **professional portfolios** with minimal effort.
 
 ## Product Vision
 
-JobStory aims to become a **complete career profile platform** where users can:
+crediblitz aims to become a **complete career profile platform** where users can:
 
 - Build professional resumes
 - Generate personal portfolios

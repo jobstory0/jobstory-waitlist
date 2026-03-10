@@ -30,7 +30,7 @@ export default function Comparison() {
                                     <th className="p-6 border-b border-l text-center text-base font-semibold w-1/4 bg-slate-50 border-slate-200 text-slate-900">{COMPARISON_CONTENT.others_label}</th>
                                     <th className="p-6 border-b text-center text-base font-semibold w-1/4 rounded-tr-3xl text-white bg-[#1F8A77] border-[#1F8A77]">
                                         <div className="flex items-center justify-center gap-2">
-                                            <div className="w-5 h-5 rounded flex items-center justify-center bg-white text-[#1F8A77]"><Briefcase className="w-3 h-3" /></div> {COMPARISON_CONTENT.jobstory_label}
+                                            <div className="w-5 h-5 rounded flex items-center justify-center bg-white text-[#1F8A77]"><Briefcase className="w-3 h-3" /></div> {COMPARISON_CONTENT.crediblitz_label}
                                         </div>
                                     </th>
                                 </tr>
@@ -51,7 +51,7 @@ export default function Comparison() {
                                                 )}
                                             </td>
                                             <td className="p-6 text-center border-l bg-[#1F8A77]/5 border-[#1F8A77]/10">
-                                                {feature.jobstory && (
+                                                {feature.crediblitz && (
                                                     <div className="w-6 h-6 rounded-full flex items-center justify-center mx-auto bg-[#1F8A77]/20"><Check strokeWidth={2} className="w-4 h-4 text-[#1F8A77]" /></div>
                                                 )}
                                             </td>
